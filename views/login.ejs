@@ -119,6 +119,19 @@ body {
   font-size: 16px;
   display: inline-block;
 }
+.wrapper #form #formContent form input[type=password] {
+  background-color: #f6f6f6;
+  border: 2px solid #f6f6f6;
+  transition: all 0.5s ease-in-out;
+  padding: 15px 3px;
+  width: 90%;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #f6f6f6;
+  font-size: 16px;
+  display: inline-block;
+}
 .wrapper #form #formContent form input[type=submit]:hover {
   background-color: #39ace7;
   border: none;
@@ -197,7 +210,7 @@ body {
     <div id="formContent">
       <form action="/login" method="POST">
         <input type="text"  class="fadeIn second" name="username" placeholder="Username" autocomplete="off" required="on">
-        <input type="text"  class="fadeIn third" name="password" placeholder="Password" autocomplete="off" required="on">
+        <input type="password"  class="fadeIn third" name="password" placeholder="Password" autocomplete="off" required="on">
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
     </div>

@@ -67,6 +67,12 @@ const HostelSchema=new mongoose.Schema({
 
 });
 
+const InfraSchema = new mongoose.Schema({
+	blockName:String,
+	floors:Number,
+	rooms:Number,	
+})
+
 
 const AttdSchema=new mongoose.Schema({
 	date:{
@@ -91,6 +97,13 @@ const Issue=mongoose.model("issue",IssueSchema);
 
 const Outing = mongoose.model("Outing",outingSchema);
 
+const Infra = mongoose.model("Infra",InfraSchema);
+// const I = new Infra({
+// 	blockName:"Block-1",
+// 	floors:3,
+// 	rooms:5
+// });
+// I.save();
 
 const AdminSchema = new mongoose.Schema({
 	username:String,
@@ -347,7 +360,11 @@ app.get("/blocks/:num",function(req,res){
 
 
 app.get("/hostels",function(req,res){
-	res.render("hostels");	
+	Infra.find({},function(err,hostels){
+		res.render("hostels",{Block:hostels});	
+
+	})
+	
 });	
 
 
